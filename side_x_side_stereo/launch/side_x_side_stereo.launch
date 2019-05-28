@@ -1,0 +1,7 @@
+<!--   -->
+<launch>
+  <node name="side_x_side_stereo" pkg="side_x_side_stereo" type="side_x_side_stereo" output="screen" >
+
+  </node>
+
+</launch>
