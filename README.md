@@ -1,6 +1,6 @@
-##elp_camera
+###elp_camera
 
-Both folders are a modifications of others repos.
+Both folders are a modification of others repos.
 
 In order to use it:
 -----------------
