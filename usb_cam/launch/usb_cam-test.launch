@@ -2,16 +2,21 @@
 <launch>
  <arg name="cam_right" value="usb_cam/right"/>
  <arg name="cam_left" value="usb_cam/left"/>
+ <arg name="width" value="2560"/> <!-- initial resolution-->
+ <arg name="height" value="720"/>
+ 
   <node name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
     <param name="video_device" value="/dev/video1" />
-    <param name="image_width" value="2560" />
-    <param name="image_height" value="960" />
+    <param name="image_width" value="$(arg width)" />
+    <param name="image_height" value="$(arg height)" />
     <param name="pixel_format" value="mjpeg" />
     <param name="camera_frame_id" value="usb_cam" />
     <param name="io_method" value="mmap"/>
   </node>
   
     <node name="side_x_side_stereo_node" pkg="side_x_side_stereo" type="side_x_side_stereo_node" output="screen" >
+        <param name="output_width" value="$(arg width)" />
+   	 <param name="output_height" value="$(arg height)" />
   </node>
  
 

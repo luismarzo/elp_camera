@@ -157,8 +157,10 @@ int main(int argc, char** argv)
         std::string("/usb_cam/left/camera_info"));
     nh.param("right_camera_info_topic", rightCameraInfoTopic,
         std::string("/usb_cam/right/camera_info"));
-    nh.param("output_width", outputWidth, 2560);  // 0 -> use 1/2 input width.
-    nh.param("output_height", outputHeight, 960);  // 0 -> use input height.
+    //nh.param("output_width", outputWidth, 2560);  // 0 -> use 1/2 input width.
+    //nh.param("output_height", outputHeight, 960);  // 0 -> use input height.
+    nh.getParam("output_width", outputWidth);
+    nh.getParam("output_height", outputHeight);
 
 
     // Register publishers and subscriber.
